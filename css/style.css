@@ -3,6 +3,7 @@
 :root {
     --primary-color: #009688;
     --secondary-color: #d9dbd5;
+    --tertiary-color: #eaeaea;
     --notifications-color: #8edafc;
 }
 
@@ -49,7 +50,7 @@ img {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #eaeaea;
+    background-color: var(--tertiary-color);
 }
 
 /* Sezione notifiche */
@@ -83,6 +84,23 @@ img {
     width: 10%;
     display: flex;
     justify-content: center;
+}
+
+/* Sezione contatti */
+
+#contacts ul {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 10px;
+}
+
+#contacts li {
+    display: flex;
+    margin-bottom: 5px;
+}
+
+#contacts .contact-info p {
+    margin-bottom: 0;
 }
 
 
