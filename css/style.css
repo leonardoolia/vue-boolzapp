@@ -34,13 +34,39 @@ img {
     background-color: bisque;
 }
 
+/* Sezione profilo */
 .profile {
     padding: 15px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-
+    background-color: #eaeaea;
 }
+
+/* Sezione notifiche */
+#notifications i {
+    cursor: pointer;
+    background-color: #fff;
+    border-radius: 50%;
+    padding: 10px;
+    min-height: 100%;
+    line-height: 100%;
+}
+
+#notifications p {
+    margin-bottom: 0;
+}
+
+.notifications-text p:first-child {
+    font-weight: bold;
+}
+
+.notifications-text p:last-child {
+    text-decoration: underline;
+}
+
+
+
 
 
 
