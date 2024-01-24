@@ -48,10 +48,13 @@ p {
     font-weight: bold;
 }
 
+
 /*? SIDEBAR */
 #sidebar {
-    min-height: 100vh;
+    height: 100vh;
     background-color: bisque;
+    overflow: auto;
+
 }
 
 /* Sezione profilo */
@@ -114,6 +117,7 @@ p {
 #contacts li {
     display: flex;
     margin-bottom: 5px;
+    justify-content: space-between;
 }
 
 
@@ -154,15 +158,17 @@ p {
     display: flex;
     margin-bottom: 20px;
     position: relative;
-
 }
 
-
+.message-content {
+    overflow-wrap: break-word;
+    word-break: break-word;
+    white-space: pre-wrap;
+}
 
 #main-section div.received {
     background-color: var(--message-received-color);
     align-self: flex-start;
-
 }
 
 #main-section div.sent {

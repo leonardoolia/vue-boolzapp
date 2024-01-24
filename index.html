@@ -32,7 +32,7 @@
 
 <body>
     <div id="root">
-        <div class="container my-5 d-flex align-items-center justify-content-center">
+        <div class="container-fluid my-5 d-flex align-items-center justify-content-center">
             <!-- SEZIONE A SINISTRA -->
             <section id="sidebar" class="flex-shrink-0">
 
@@ -73,19 +73,19 @@
                 <!-- Sezione contatti -->
                 <div id="contacts">
                     <ul>
-                        <li>
+                        <li v-for="contact in contacts">
                             <!-- Sezione con immagine e info utente-->
                             <div class="contact-img d-flex gap-2 align-items-center">
-                                <img src="img/avatar_2.jpg" alt="">
+                                <img :src="`img/avatar${contact.avatar}.jpg`" alt="">
                                 <div class="contact-info">
-                                    <p class="contact-name">Tizio</p>
-                                    <p class="contact-message">Ciaoooo</p>
+                                    <p class="contact-name">{{contact.name}}</p>
+                                    <p class="contact-message">{{contact.messages.text}}</p>
                                 </div>
 
                             </div>
 
                             <!-- Sezione ultimo accesso -->
-                            <div class="last-access d-flex align-items-center">
+                            <div class="last-access d-flex align-items-center me-4">
                                 <span>12:00</span>
                             </div>
                         </li>
@@ -118,7 +118,7 @@
                 <!-- Sezione main -->
                 <main id="main-section">
                     <div class="badge received">
-                        <p class="message-content mb-1">
+                        <p class="message-content mb-2">
                             ssksjkskskaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
                         </p>
                         <span class="message-time">12:00</span>
