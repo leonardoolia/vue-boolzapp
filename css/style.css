@@ -1,0 +1,16 @@
+body {
+    background-image: linear-gradient(to bottom, #009688 0%, #009688 20%, #d9dbd5 0%, #d9dbd5 80%);
+    min-height: 100vh;
+}
+
+#sidebar {
+    min-height: 500px;
+    min-width: 500px;
+    background-color: bisque;
+}
+
+#main {
+    min-height: 500px;
+    min-width: 500px;
+    background-color: blue;
+}
