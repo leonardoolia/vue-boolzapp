@@ -1,14 +1,51 @@
+/*? GENERICS */
 body {
     background-image: linear-gradient(to bottom, #009688 0%, #009688 20%, #d9dbd5 0%, #d9dbd5 80%);
     min-height: 100vh;
 }
 
+ul {
+    display: flex;
+    gap: 10px;
+    list-style-type: none;
+    margin-bottom: 0;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: #b1b1b1;
+}
+
+img {
+    width: 15%;
+    height: auto;
+    display: block;
+    border-radius: 50%;
+}
+
+/*? SIDEBAR */
 #sidebar {
     min-height: 500px;
     min-width: 500px;
     background-color: bisque;
 }
 
+.profile {
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+
+
+
+/*? MAIN */
 #main {
     min-height: 500px;
     min-width: 500px;
