@@ -1,5 +1,12 @@
 const { createApp } = Vue;
 
-const app = createApp({});
+const app = createApp({
+    name: 'Boolzapp',
+    data() {
+        return {
+            data
+        }
+    }
+});
 
 app.mount('#root');
