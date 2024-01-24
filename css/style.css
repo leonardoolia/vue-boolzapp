@@ -4,7 +4,10 @@
     --primary-color: #009688;
     --secondary-color: #d9dbd5;
     --tertiary-color: #eaeaea;
+
     --notifications-color: #8edafc;
+    --message-sent-color: #d5f9ba;
+    --message-received-color: #ffffff;
 }
 
 
@@ -73,6 +76,7 @@ p {
     padding: 10px;
     min-height: 100%;
     line-height: 100%;
+    position: relative;
 }
 
 #notifications p {
@@ -85,6 +89,7 @@ p {
 
 .notifications-text p:last-child {
     text-decoration: underline;
+    cursor: pointer
 }
 
 /* Sezione search */
@@ -95,6 +100,10 @@ p {
 }
 
 /* Sezione contatti */
+
+#contacts {
+    overflow: auto;
+}
 
 #contacts ul {
     display: flex;
@@ -121,12 +130,50 @@ p {
 
 #main-section {
     height: calc(100vh - 160px);
-    background-color: aquamarine;
+    background-image: url("../img/mine.jpg");
+    padding: 40px;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
 /* Sezione Header */
 #header-section img {
-    /* max-width: 10%; */
+    width: 50px;
+    height: auto;
+    border-radius: 50%;
+}
+
+/* Sezione main */
+
+#main-section div {
+    width: 40%;
+    padding: 20px;
+    color: black;
+    display: flex;
+    margin-bottom: 20px;
+    position: relative;
+
+}
+
+
+
+#main-section div.received {
+    background-color: var(--message-received-color);
+    align-self: flex-start;
+
+}
+
+#main-section div.sent {
+    background-color: var(--message-sent-color);
+    align-self: flex-end;
+}
+
+#main-section .message-time {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
 }
 
 
@@ -141,4 +188,8 @@ p {
 .form-section {
     flex-grow: 1;
     width: 80%;
+}
+
+#footer-section i {
+    cursor: pointer
 }
