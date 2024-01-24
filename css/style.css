@@ -1,6 +1,15 @@
+/* CSS CUSTOM PROPERTIES */
+
+:root {
+    --primary-color: #009688;
+    --secondary-color: #d9dbd5;
+    --notifications-color: #8edafc;
+}
+
+
 /*? GENERICS */
 body {
-    background-image: linear-gradient(to bottom, #009688 0%, #009688 20%, #d9dbd5 0%, #d9dbd5 80%);
+    background-image: linear-gradient(to bottom, var(--primary-color) 0%, var(--primary-color) 20%, var(--secondary-color) 0%, var(--secondary-color) 80%);
     min-height: 100vh;
 }
 
@@ -44,6 +53,10 @@ img {
 }
 
 /* Sezione notifiche */
+#notifications {
+    background-color: var(--notifications-color);
+}
+
 #notifications i {
     cursor: pointer;
     background-color: #fff;
@@ -65,7 +78,12 @@ img {
     text-decoration: underline;
 }
 
-
+/* Sezione search */
+#search span {
+    width: 10%;
+    display: flex;
+    justify-content: center;
+}
 
 
 
