@@ -22,8 +22,6 @@
     <!-- Vue JS -->
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 
-    <!-- Data -->
-    <script src="js/data.js"></script>
 
     <!-- JavaScript -->
     <script defer src="js/script.js"></script>
@@ -37,10 +35,11 @@
             <section id="sidebar" class="flex-shrink-0">
 
                 <!-- Sezione profilo -->
+
                 <div class="profile">
                     <div class="profile-info d-flex align-items-center gap-1">
-                        <img src="img/avatar_1.jpg" alt="avata1">
-                        <span class="fw-bold">Sofia</span>
+                        <img :src="`img/avatar${user.avatar}.jpg`" :alt="user.name">
+                        <span class="fw-bold">{{user.name}}</span>
                     </div>
                     <div class="profile-actions d-flex align-items-center">
                         <ul>
@@ -64,19 +63,21 @@
                 <!-- Sezione search -->
                 <div id="search" class="my-1 px-3">
                     <div class="input-group mb-3">
-                        <span class="input-group-text" id="basic-addon2"><i
-                                class="fa-solid fa-magnifying-glass"></i></span>
+                        <span class="input-group-text" id="basic-addon2">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </span>
                         <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat">
                     </div>
                 </div>
 
+
                 <!-- Sezione contatti -->
-                <div id="contacts">
+                <div id="contacts" class="flex-grow-1">
                     <ul>
-                        <li v-for="contact in contacts">
+                        <li v-for="contact in contacts" :key="contact.id">
                             <!-- Sezione con immagine e info utente-->
                             <div class="contact-img d-flex gap-2 align-items-center">
-                                <img :src="`img/avatar${contact.avatar}.jpg`" alt="">
+                                <img :src="`img/avatar${contact.avatar}.jpg`" :alt="contact.name">
                                 <div class="contact-info">
                                     <p class="contact-name">{{contact.name}}</p>
                                     <p class="contact-message">{{contact.messages.text}}</p>
@@ -91,6 +92,7 @@
                         </li>
                     </ul>
                 </div>
+
             </section>
 
             <!-- SEZIONE A DESTRA -->
@@ -125,6 +127,16 @@
                     </div>
                     <div class="badge sent">
                         <p class="message-content">ssksjksksk</p>
+                        <span class="message-time">12:00</span>
+                    </div>
+                    <div class="badge sent">
+                        <p class="message-content">ssksjksksk</p>
+                        <span class="message-time">12:00</span>
+                    </div>
+                    <div class="badge received">
+                        <p class="message-content mb-2">
+                            ssksjkskskaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+                        </p>
                         <span class="message-time">12:00</span>
                     </div>
                 </main>

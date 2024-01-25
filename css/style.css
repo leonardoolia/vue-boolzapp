@@ -34,7 +34,7 @@ a {
 }
 
 img {
-    width: 15%;
+    width: 10%;
     height: auto;
     display: block;
     border-radius: 50%;
@@ -52,10 +52,10 @@ p {
 /*? SIDEBAR */
 #sidebar {
     height: 100vh;
-    background-color: bisque;
     overflow: auto;
-
+    background-color: var(--message-received-color);
 }
+
 
 /* Sezione profilo */
 .profile {
@@ -118,8 +118,13 @@ p {
     display: flex;
     margin-bottom: 5px;
     justify-content: space-between;
+    padding: 5px;
 }
 
+#contacts li:hover {
+    background-color: var(--tertiary-color);
+    cursor: pointer;
+}
 
 
 /*? MAIN */
@@ -127,7 +132,6 @@ p {
 #header-section,
 #footer-section {
     height: 80px;
-    background-color: chocolate;
     padding: 15px;
     background-color: var(--tertiary-color);
 }
