@@ -34,9 +34,9 @@ a {
 }
 
 img {
-    width: 10%;
-    height: auto;
-    display: block;
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
     border-radius: 50%;
 }
 
@@ -66,6 +66,7 @@ p {
     background-color: var(--tertiary-color);
     height: 80px;
 }
+
 
 /* Sezione notifiche */
 #notifications {
@@ -108,7 +109,6 @@ p {
     overflow: auto;
 }
 
-
 #contacts ul {
     display: flex;
     flex-direction: column;
@@ -125,6 +125,10 @@ p {
 #contacts li:hover {
     background-color: var(--tertiary-color);
     cursor: pointer;
+}
+
+#last-message-time {
+    font-size: 0.8rem;
 }
 
 
