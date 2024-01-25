@@ -108,6 +108,7 @@ p {
     overflow: auto;
 }
 
+
 #contacts ul {
     display: flex;
     flex-direction: column;

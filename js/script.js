@@ -192,9 +192,24 @@ const app = createApp({
                         }
                     ],
                 }
-            ]
+            ],
+
+            currentId: 1,
+        }
+    },
+
+    computed: {
+        currentContact() {
+            return this.contacts.find(contact => contact.id === this.currentId);
+        }
+    },
+
+    methods: {
+        setCurrentContact(contactId) {
+            this.currentId = contactId;
         }
     }
+
 });
 
 app.mount('#root');

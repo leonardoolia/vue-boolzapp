@@ -32,7 +32,7 @@
     <div id="root">
         <div class="container-fluid my-5 d-flex align-items-center justify-content-center">
             <!-- SEZIONE A SINISTRA -->
-            <section id="sidebar" class="flex-shrink-0">
+            <section id="sidebar" class="">
 
                 <!-- Sezione profilo -->
 
@@ -74,13 +74,14 @@
                 <!-- Sezione contatti -->
                 <div id="contacts" class="flex-grow-1">
                     <ul>
-                        <li v-for="contact in contacts" :key="contact.id">
+                        <li v-for="contact in contacts" :key="contact.id" @click="setCurrentContact(contact.id)">
                             <!-- Sezione con immagine e info utente-->
                             <div class="contact-img d-flex gap-2 align-items-center">
                                 <img :src="`img/avatar${contact.avatar}.jpg`" :alt="contact.name">
                                 <div class="contact-info">
                                     <p class="contact-name">{{contact.name}}</p>
-                                    <p class="contact-message">{{contact.messages.text}}</p>
+                                    <p class="contact-message">{{contact.messages[contact.messages.length - 1].text}}
+                                    </p>
                                 </div>
 
                             </div>
@@ -97,14 +98,14 @@
 
             <!-- SEZIONE A DESTRA -->
             <section id="main" class="flex-grow-1">
+
                 <!-- Sezione header -->
                 <header id="header-section" class="d-flex justify-content-between align-items-center">
-
                     <!-- Immagine contatto -->
                     <div class="contact-img d-flex gap-2 align-items-center">
-                        <img src="img/avatar_2.jpg" alt="">
+                        <img :src="`img/avatar${currentContact.avatar}.jpg`" alt="currentContact.name">
                         <div class="contact-info">
-                            <p class="contact-name">Tizio</p>
+                            <p class="contact-name">{{currentContact.name}}</p>
                             <p class="contact-message">Ultimo accesso oggi alle 12:00</p>
                         </div>
                     </div>
@@ -119,20 +120,6 @@
 
                 <!-- Sezione main -->
                 <main id="main-section">
-                    <div class="badge received">
-                        <p class="message-content mb-2">
-                            ssksjkskskaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-                        </p>
-                        <span class="message-time">12:00</span>
-                    </div>
-                    <div class="badge sent">
-                        <p class="message-content">ssksjksksk</p>
-                        <span class="message-time">12:00</span>
-                    </div>
-                    <div class="badge sent">
-                        <p class="message-content">ssksjksksk</p>
-                        <span class="message-time">12:00</span>
-                    </div>
                     <div class="badge received">
                         <p class="message-content mb-2">
                             ssksjkskskaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
