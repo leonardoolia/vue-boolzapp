@@ -14,7 +14,7 @@
 /*? GENERICS */
 body {
     background-image: linear-gradient(to bottom, var(--primary-color) 0%, var(--primary-color) 20%, var(--secondary-color) 0%, var(--secondary-color) 80%);
-    min-height: 100vh;
+
 }
 
 ul {
@@ -133,6 +133,10 @@ p {
 
 
 /*? MAIN */
+
+/* #main {
+    flex-grow: 1;
+} */
 
 #header-section,
 #footer-section {
