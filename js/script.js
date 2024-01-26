@@ -195,6 +195,8 @@ const app = createApp({
             ],
 
             currentId: null,
+
+            newMessageText: '',
         }
     },
 
@@ -204,6 +206,11 @@ const app = createApp({
         // Trovo il current contact (l'intero oggetto): nella lista dei contatti cerco l'id che sia uguale al current id
         currentContact() {
             return this.contacts.find(contact => contact.id === this.currentId);
+        },
+
+        // Dipende dalla computed superiore e tiene sotto controllo le varie chat
+        currentChat() {
+            return this.currentContact.messages;
         }
     },
 
@@ -211,7 +218,25 @@ const app = createApp({
         setCurrentContact(contactId) {
             this.currentId = contactId;
         },
+
+        sendMessage() {
+            // controllo che ci sia del testo nel messaggio
+            if (!this.newMessageText) return;
+
+            // Costruisco un nuovo oggetto che corrisponde al nuovo messaggio
+            const newObect = {
+                id: new Date().toISOString(),
+                date: new Date().toLocaleDateString,
+                text: this.newMessageText,
+                status: 'sent',
+            }
+
+            // Pusho il nuovo messaggio
+            this.currentChat.push(newObect);
+            this.newMessageText = '';
+        }
     },
+
 
     // Appena l'app viene creata,  il current id sarà il primo che abbiamo nella lista dei dati
     created() {

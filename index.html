@@ -87,8 +87,9 @@
                             </div>
 
                             <!-- Sezione ultimo accesso -->
-                            <div class="last-access d-flex align-items-center me-4">
-                                <span>12:00</span>
+                            <div class="last-access d-flex align-items-end me-4 px-3">
+                                <span id="last-message-time">{{contact.messages[contact.messages.length -
+                                    1].date}}</span>
                             </div>
                         </li>
                     </ul>
@@ -103,7 +104,7 @@
                 <header id="header-section" class="d-flex justify-content-between align-items-center">
                     <!-- Immagine contatto -->
                     <div class="contact-img d-flex gap-2 align-items-center">
-                        <img :src="`img/avatar${currentContact.avatar}.jpg`" alt="currentContact.name">
+                        <img :src="`img/avatar${currentContact.avatar}.jpg`" :alt="currentContact.name">
                         <div class="contact-info">
                             <p class="contact-name">{{currentContact.name}}</p>
                             <p class="contact-message">Ultimo accesso oggi alle 12:00</p>
@@ -118,14 +119,14 @@
                     </ul>
                 </header>
 
-                <!-- Sezione main -->
+                <!-- Sezione main CON MESSAGGI-->
                 <main id="main-section">
-                    <div class="badge received">
-                        <p class="message-content mb-2">
-                            ssksjkskskaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-                        </p>
-                        <span class="message-time">12:00</span>
+
+                    <div v-for="message in currentChat" :key="message.id" class="badge" :class="message.status">
+                        <p class="message-content mb-2">{{message.text}}</p>
+                        <span class="message-time">{{message.date}}</span>
                     </div>
+
                 </main>
 
                 <!-- Sezione footer -->
@@ -138,7 +139,8 @@
                     <!-- Sezione input text -->
                     <div class="form-section">
                         <form>
-                            <input class="form-control" type="text" placeholder="Scrivi un messaggio">
+                            <input class="form-control" type="text" placeholder="Scrivi un messaggio"
+                                v-model.trim="newMessageText" @keyup.enter="sendMessage">
                         </form>
                     </div>
 
