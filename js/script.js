@@ -197,6 +197,8 @@ const app = createApp({
             currentId: null,
 
             newMessageText: '',
+
+            searchName: '',
         }
     },
 
@@ -211,6 +213,15 @@ const app = createApp({
         // Dipende dalla computed superiore e tiene sotto controllo le varie chat
         currentChat() {
             return this.currentContact.messages;
+        },
+
+        // Filtro per contatti
+        filteredContacts() {
+            const searchContact = this.searchName.toLowerCase();
+
+            return this.contacts.filter(contact =>
+                contact.name.toLowerCase().includes(searchContact)
+            );
         }
     },
 
@@ -245,11 +256,24 @@ const app = createApp({
                 text: this.newMessageText,
                 status: 'sent',
             }
-
             // Pusho il nuovo messaggio
             this.currentChat.push(newObect);
             this.newMessageText = '';
-        }
+
+
+            // Risposta automatica
+            setTimeout(() => {
+                const newAnswer = {
+                    id: new Date().toISOString(),
+                    date: this.getCurrentDate(),
+                    text: 'Ok',
+                    status: 'received',
+                }
+                this.currentChat.push(newAnswer);
+            }, 1000);
+        },
+
+
     },
 
 
