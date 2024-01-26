@@ -3,8 +3,8 @@ const { createApp } = Vue;
 const app = createApp({
     name: 'Boolzapp',
     data() {
-        return {
 
+        return {
             user: {
                 name: 'Nome Utente',
                 avatar: '_io'
@@ -194,11 +194,14 @@ const app = createApp({
                 }
             ],
 
-            currentId: 1,
+            currentId: null,
         }
     },
 
+
     computed: {
+
+        // Trovo il current contact (l'intero oggetto): nella lista dei contatti cerco l'id che sia uguale al current id
         currentContact() {
             return this.contacts.find(contact => contact.id === this.currentId);
         }
@@ -207,7 +210,12 @@ const app = createApp({
     methods: {
         setCurrentContact(contactId) {
             this.currentId = contactId;
-        }
+        },
+    },
+
+    // Appena l'app viene creata,  il current id sarà il primo che abbiamo nella lista dei dati
+    created() {
+        this.currentId = this.contacts[0].id;
     }
 
 });
