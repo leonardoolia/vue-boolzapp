@@ -121,12 +121,10 @@
 
                 <!-- Sezione main CON MESSAGGI-->
                 <main id="main-section">
-
                     <div v-for="message in currentChat" :key="message.id" class="badge" :class="message.status">
                         <p class="message-content mb-2">{{message.text}}</p>
                         <span class="message-time">{{message.date}}</span>
                     </div>
-
                 </main>
 
                 <!-- Sezione footer -->
@@ -138,10 +136,8 @@
 
                     <!-- Sezione input text -->
                     <div class="form-section">
-                        <form>
-                            <input class="form-control" type="text" placeholder="Scrivi un messaggio"
-                                v-model.trim="newMessageText" @keyup.enter="sendMessage">
-                        </form>
+                        <input class="form-control" type="text" placeholder="Scrivi un messaggio"
+                            v-model.trim="newMessageText" @keyup.enter="sendMessage">
                     </div>
 
                     <!-- Sezione audio -->

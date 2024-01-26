@@ -226,7 +226,7 @@ const app = createApp({
             // Costruisco un nuovo oggetto che corrisponde al nuovo messaggio
             const newObect = {
                 id: new Date().toISOString(),
-                date: new Date().toLocaleDateString,
+                date: new Date().toLocaleDateString(),
                 text: this.newMessageText,
                 status: 'sent',
             }
