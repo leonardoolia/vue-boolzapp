@@ -219,6 +219,21 @@ const app = createApp({
             this.currentId = contactId;
         },
 
+        // Funzione per la data dei messaggi
+        getCurrentDate() {
+            const date = new Date();
+
+            const day = date.getDate();
+            const month = date.getMonth() + 1;
+            const year = date.getFullYear();
+
+            const hours = date.getHours();
+            const minutes = date.getMinutes();
+            const seconds = date.getSeconds();
+
+            return `${day}/${month}/${year} ${hours}:${minutes}:${seconds}`
+        },
+
         sendMessage() {
             // controllo che ci sia del testo nel messaggio
             if (!this.newMessageText) return;
@@ -226,7 +241,7 @@ const app = createApp({
             // Costruisco un nuovo oggetto che corrisponde al nuovo messaggio
             const newObect = {
                 id: new Date().toISOString(),
-                date: new Date().toLocaleDateString(),
+                date: this.getCurrentDate(),
                 text: this.newMessageText,
                 status: 'sent',
             }
