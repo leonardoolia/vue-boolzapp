@@ -274,16 +274,8 @@ const app = createApp({
         },
 
         deleteMessage(messageId) {
-            const messageIndex = this.currentChat.findIndex(message => message.id === messageId);
-
-            // Check if there's only one message left
-            if (this.currentChat.length === 1) {
-                // Delete the message
-                this.currentChat.splice(0, 1);
-            } else if (messageIndex !== -1) {
-                // Remove the message from the currentChat array
-                this.currentChat.splice(messageIndex, 1);
-            }
+            const updatedChat = this.currentChat.filter(message => message.id !== messageId);
+            this.currentContact.messages = updatedChat;
         }
 
     },
