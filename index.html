@@ -78,7 +78,7 @@
                         <li v-for="contact in filteredContacts" :key="contact.id"
                             @click="setCurrentContact(contact.id)">
                             <!-- Sezione con immagine e info utente-->
-                            <div class="contact-img d-flex gap-2 align-items-center">
+                            <div class="contact-img d-flex gap-2 align-items-center col-8">
                                 <img :src="`img/avatar${contact.avatar}.jpg`" :alt="contact.name">
                                 <div class="contact-info">
                                     <p class="contact-name">{{contact.name}}</p>
@@ -89,7 +89,7 @@
                             </div>
 
                             <!-- Sezione ultimo accesso -->
-                            <div class="last-access d-flex align-items-end me-4 px-3">
+                            <div class="last-access d-flex align-items-end me-4 px-3 col-4">
                                 <span id="last-message-time">{{contact.messages[contact.messages.length -
                                     1].date}}</span>
                             </div>
@@ -125,6 +125,16 @@
                 <main id="main-section">
                     <div v-for="message in currentChat" :key="message.id" class="badge" :class="message.status">
                         <p class="message-content mb-2">{{message.text}}</p>
+                        <div class="arrow-dropdown arrow">
+                            <span class="arrow" data-bs-toggle="dropdown" aria-expanded="false"><i
+                                    class="fa-solid fa-chevron-down"></i></span>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Segna come non letto</a></li>
+                                <li><a id="delete-message" class="dropdown-item" href="#"
+                                        @click="deleteMessage(message.id)">Cancella messaggio</a></li>
+                            </ul>
+                        </div>
+
                         <span class="message-time">{{message.date}}</span>
                     </div>
                 </main>

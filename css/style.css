@@ -78,7 +78,6 @@ p {
     background-color: #fff;
     border-radius: 50%;
     padding: 10px;
-    min-height: 100%;
     line-height: 100%;
     position: relative;
 }
@@ -107,12 +106,14 @@ p {
 
 #contacts {
     overflow: auto;
+
 }
 
 #contacts ul {
     display: flex;
     flex-direction: column;
     padding-bottom: 10px;
+    padding-inline-start: 0;
 }
 
 #contacts li {
@@ -130,6 +131,8 @@ p {
 #last-message-time {
     font-size: 0.8rem;
 }
+
+
 
 
 /*? MAIN */
@@ -196,6 +199,21 @@ p {
     right: 5px;
 }
 
+#main-section .arrow {
+    display: none;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    cursor: pointer;
+}
+
+#main-section div:hover .arrow {
+    display: block;
+}
+
+.arrow:hover .dropdown-menu {
+    display: block;
+}
 
 /* Sezione footer */
 #footer-section {
